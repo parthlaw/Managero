@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Cookies from "js-cookie";
 import "./Card.css";
 const CreateCard = ({ ChangeTemp }) => {
@@ -6,6 +6,9 @@ const CreateCard = ({ ChangeTemp }) => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [username] = useState(Cookies.get("username"));
+  const text = useRef();
+  const em = useRef();
+  const web = useRef();
   const sendData = () => {
     fetch("https://managero-passwords.herokuapp.com/card", {
       method: "post",
@@ -21,6 +24,9 @@ const CreateCard = ({ ChangeTemp }) => {
       .then((data) => {
         if (data === "success") {
           ChangeTemp();
+          text.current.value = "";
+          web.current.value = "";
+          em.current.value = "";
           alert("Card Added");
         }
       });
@@ -35,6 +41,7 @@ const CreateCard = ({ ChangeTemp }) => {
           <div className="flip-card-back">
             <div className="card1">
               <input
+                ref={web}
                 type="text"
                 placeholder="website"
                 onChange={(e) => {
@@ -42,6 +49,7 @@ const CreateCard = ({ ChangeTemp }) => {
                 }}
               />
               <input
+                ref={em}
                 type="text"
                 placeholder="email"
                 onChange={(e) => {
@@ -49,6 +57,7 @@ const CreateCard = ({ ChangeTemp }) => {
                 }}
               />
               <input
+                ref={text}
                 type="text"
                 placeholder="password"
                 onChange={(e) => {
