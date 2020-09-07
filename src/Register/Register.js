@@ -17,6 +17,7 @@ const Register = ({ loginRoute }) => {
       .then((response) => response.json())
       .then((data) => {
         if (data === "success") {
+          loginRoute(true);
           alert("Login to continue");
         }
       });
@@ -69,14 +70,14 @@ const Register = ({ loginRoute }) => {
       <br />
       <input type="submit" onClick={handleSubmit} />
       <span>Already have a account?</span>
-      <span
+      <button
         className="loginButton"
         onClick={() => {
           loginRoute(true);
         }}
       >
         Login
-      </span>
+      </button>
     </div>
   );
 };

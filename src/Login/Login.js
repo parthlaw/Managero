@@ -29,8 +29,8 @@ const Login = ({ loginRoute, path }) => {
       });
   };
   return (
-    <div class="loginbox">
-      <h1>Login Here</h1>
+    <div className="loginbox">
+      <h4>Login Here</h4>
       <img src={user} id="user" alt="user" />
       <div>
         <div>
@@ -72,14 +72,14 @@ const Login = ({ loginRoute, path }) => {
             onClick={handleLogin}
           />
           <span>Don't have a account?</span>
-          <span
+          <button
             className="registerButton"
             onClick={() => {
               loginRoute(false);
             }}
           >
             Register
-          </span>
+          </button>
         </div>
       </div>
     </div>
