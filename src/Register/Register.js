@@ -23,61 +23,63 @@ const Register = ({ loginRoute }) => {
       });
   };
   return (
-    <div className="registrationbox">
-      <h1>Managero</h1>
+    <div className="registrationContainer">
+      <div className="registrationbox">
+        <h1>Managero</h1>
 
-      <label>
-        Username:
-        <input
-          type="text"
-          name="username"
-          placeholder="Enter Username"
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-          required
-        />
-      </label>
-      <br />
+        <label>
+          Username:
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+            required
+          />
+        </label>
+        <br />
 
-      <label>
-        Email:
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter Email"
-          onChange={(e) => {
-            setEmail(e.target.value);
+        <label>
+          Email:
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            required
+          />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input
+            type="Password"
+            name="password"
+            placeholder="Enter Password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            required
+          />
+        </label>
+        <br />
+        <br />
+        <br />
+        <input type="submit" onClick={handleSubmit} />
+        <span>Already have a account?</span>
+        <button
+          className="loginButton"
+          onClick={() => {
+            loginRoute(true);
           }}
-          required
-        />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input
-          type="Password"
-          name="password"
-          placeholder="Enter Password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          required
-        />
-      </label>
-      <br />
-      <br />
-      <br />
-      <input type="submit" onClick={handleSubmit} />
-      <span>Already have a account?</span>
-      <button
-        className="loginButton"
-        onClick={() => {
-          loginRoute(true);
-        }}
-      >
-        Login
-      </button>
+        >
+          Login
+        </button>
+      </div>
     </div>
   );
 };

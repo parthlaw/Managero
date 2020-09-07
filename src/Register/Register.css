@@ -1,20 +1,9 @@
-body {
-  padding: 0px;
-  margin: 0px;
-  height: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  font-family: sans-serif;
-}
-
 .registrationbox {
   width: 30%;
   min-width: 350px;
   background: black;
   color: #fff;
   margin-top: 2em;
-  right: 35%;
   position: absolute;
   box-sizing: border-box;
   padding: 40px 30px;
@@ -22,6 +11,7 @@ body {
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 #user {
   width: 100px;
@@ -77,4 +67,8 @@ input[type="email"] {
 }
 .loginButton :hover {
   cursor: pointer;
+}
+.registrationContainer {
+  display: flex;
+  justify-content: center;
 }

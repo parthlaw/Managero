@@ -16,7 +16,6 @@ const CardList = ({ temp }) => {
       .then((response) => response.json())
       .then((data) => {
         setCards(data);
-        console.log(data);
       });
   }, [temp, username]);
   const CardArray = cards.map((post, i) => {

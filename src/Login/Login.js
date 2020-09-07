@@ -29,57 +29,59 @@ const Login = ({ loginRoute, path }) => {
       });
   };
   return (
-    <div className="loginbox">
-      <h4>Login Here</h4>
-      <img src={user} id="user" alt="user" />
-      <div>
+    <div className="loginContainer">
+      <div className="loginbox">
+        <h4>Login Here</h4>
+        <img src={user} id="user" alt="user" />
         <div>
-          <label>
-            Username:
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Enter Username"
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
-              required
-            />{" "}
-          </label>
-        </div>
+          <div>
+            <label>
+              Username:
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Enter Username"
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+                required
+              />{" "}
+            </label>
+          </div>
 
-        <div>
-          <label>
-            Password:
+          <div>
+            <label>
+              Password:
+              <input
+                type="Password"
+                name="password"
+                id="password"
+                placeholder="Enter Password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                required
+              />
+            </label>
+          </div>
+          <div>
             <input
-              type="Password"
-              name="password"
-              id="password"
-              placeholder="Enter Password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              required
+              type="submit"
+              name="submit"
+              value="Login"
+              onClick={handleLogin}
             />
-          </label>
-        </div>
-        <div>
-          <input
-            type="submit"
-            name="submit"
-            value="Login"
-            onClick={handleLogin}
-          />
-          <span>Don't have a account?</span>
-          <button
-            className="registerButton"
-            onClick={() => {
-              loginRoute(false);
-            }}
-          >
-            Register
-          </button>
+            <span>Don't have a account?</span>
+            <button
+              className="registerButton"
+              onClick={() => {
+                loginRoute(false);
+              }}
+            >
+              Register
+            </button>
+          </div>
         </div>
       </div>
     </div>
