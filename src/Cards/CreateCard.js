@@ -16,8 +16,14 @@ const CreateCard = ({ ChangeTemp }) => {
         website: website,
         password: password,
       }),
-    });
-    ChangeTemp();
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data === "success") {
+          ChangeTemp();
+          alert("Card Added");
+        }
+      });
   };
   return (
     <div className="card">
